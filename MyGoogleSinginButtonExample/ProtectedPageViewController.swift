@@ -13,13 +13,16 @@ class ProtectedPageViewController: UIViewController, GIDSignInUIDelegate{
     @IBAction func signOutButtonTapped(sender: AnyObject) {
         GIDSignIn.sharedInstance().signOut()
         
-        let signInPage = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        let signInPage = self.storyboard!.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
         
+        self.presentViewController(signInPage, animated: true, completion: nil)
+        /*
         let signInPageNav = UINavigationController(rootViewController: signInPage)
         
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         appDelegate.window?.rootViewController = signInPageNav
+        */
         
     }
     

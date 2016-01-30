@@ -64,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 let myStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 
                 let protectedPage = myStoryBoard.instantiateViewControllerWithIdentifier("ProtectedPageViewController") as! ProtectedPageViewController
+                    
                 let protectedPageNav = UINavigationController(rootViewController: protectedPage)
                 
                 self.window?.rootViewController = protectedPageNav
