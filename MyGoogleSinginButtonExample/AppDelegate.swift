@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         // Initialize sign-in
+        print("Did Finish Launch With Options")
+        
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
@@ -29,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // [START openurl]
     func application(application: UIApplication,
         openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+            print("GIDSign IN Open URL, sourceApplication, annotation")
+            // Not called in this process???
+            
             return GIDSignIn.sharedInstance().handleURL(url,
                 sourceApplication: sourceApplication,
                 annotation: annotation)
@@ -37,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
   //  @available(iOS 9.0, *)
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        print("GIDSignIn related OpenURL, Options delegate")
         return GIDSignIn.sharedInstance().handleURL(url,
             sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String?,
             annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
@@ -84,6 +90,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // [START disconnect_handler]
     func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
         withError error: NSError!) {
+            // Not Called here???
+            print("Google SignIn didDisconnectWithUser")
             // Perform any operations when the user disconnects from app here.
             // [START_EXCLUDE]
             NSNotificationCenter.defaultCenter().postNotificationName(

@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="1592" y="1028"/>
         </scene>
-        <!--Protected page-->
+        <!--Protected Page View Controller-->
         <scene sceneID="B9T-iw-6fx">
             <objects>
                 <viewController storyboardIdentifier="ProtectedPageViewController" id="AT8-YX-MiP" customClass="ProtectedPageViewController" customModule="MyGoogleSinginButtonExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,6 @@
                             <constraint firstItem="aTU-lF-Cs3" firstAttribute="top" secondItem="8Jn-Ht-EOn" secondAttribute="bottom" constant="72" id="lNg-kZ-lOP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Protected page" id="jQQ-qN-6SE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be1-ZT-zzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

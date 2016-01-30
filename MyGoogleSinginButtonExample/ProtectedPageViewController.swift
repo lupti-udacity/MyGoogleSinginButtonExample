@@ -16,13 +16,6 @@ class ProtectedPageViewController: UIViewController, GIDSignInUIDelegate{
         let signInPage = self.storyboard!.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
         
         self.presentViewController(signInPage, animated: true, completion: nil)
-        /*
-        let signInPageNav = UINavigationController(rootViewController: signInPage)
-        
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        appDelegate.window?.rootViewController = signInPageNav
-        */
         
     }
     
@@ -41,15 +34,4 @@ class ProtectedPageViewController: UIViewController, GIDSignInUIDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
