@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // [START openurl]
     func application(application: UIApplication,
         openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-            print("GIDSign IN Open URL, sourceApplication, annotation")
+            print("GIDSign IN openURL, sourceApplication, annotation")
             // Not called in this process???
             
             return GIDSignIn.sharedInstance().handleURL(url,
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
   //  @available(iOS 9.0, *)
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        print("GIDSignIn related OpenURL, Options delegate")
+        print("GIDSignIn related openURL, Options delegate \(url)")
         return GIDSignIn.sharedInstance().handleURL(url,
             sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String?,
             annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 let name = user.profile.name
                 _ = user.profile.email
                 
-                print("Did Sign in for user and user profile is \(name)")
+                print("AppDelegate` - Did Sign in for user and user profile is \(name)")
                 
                 // [START_EXCLUDE]
                 NSNotificationCenter.defaultCenter().postNotificationName(
@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
         withError error: NSError!) {
             // Not Called here???
-            print("Google SignIn didDisconnectWithUser")
+            print("AppDelegate - Google SignIn didDisconnectWithUser")
             // Perform any operations when the user disconnects from app here.
             // [START_EXCLUDE]
             NSNotificationCenter.defaultCenter().postNotificationName(
