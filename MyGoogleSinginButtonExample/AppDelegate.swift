@@ -34,9 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("GIDSign IN openURL, sourceApplication, annotation")
             // Not called in this process???
             
-            return GIDSignIn.sharedInstance().handleURL(url,
-                sourceApplication: sourceApplication,
-                annotation: annotation)
+            return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: sourceApplication,annotation: annotation)
     }
     // [END openurl]
     
